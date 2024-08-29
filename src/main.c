@@ -3,8 +3,8 @@
 //
 
 #include <stdio.h>
-#include "cpu.h"
-#include "memory.h"
+#include "../include/cpu.h"
+#include "../include/memory.h"
 
 /*
  * Основой любой ЭВМ является процессор и оперативная память;
@@ -12,11 +12,12 @@
  * Выводит информационное сообщение и запускает цикл процессора;
  *
  * Так как мы ничего не записываем в оперативную память, нам выведется NOP;
+ *
+ * Код изменится в будущем
 */
 
 int main()
 {
-
     printf("Starting z80 heartbeat...\n");
 
     Memory memory;
@@ -24,7 +25,7 @@ int main()
 
     memory_init(&memory);
     cpu_init(&cpu);
-    
+
     cpu_execute(&cpu, &memory);
 
     return 0;
